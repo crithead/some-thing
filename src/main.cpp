@@ -14,7 +14,7 @@ using namespace zebra;
 /// # Start threads
 /// # Wait for threads to exit
 /// # Clean up
-int main( int argc, char *argv[])
+int main(int argc, char *argv[])
 {
     Dictionary opts;
     Logger log;
@@ -23,32 +23,26 @@ int main( int argc, char *argv[])
         GetOptions(argc, argv, opts);
         ReadParametersFile(opts);
         InitLogger(log, opts);
-        //log.debug(parameters);
+        // log.debug(parameters);
 
         if (opts.GetBool("help")) {
             PrintUsage();
             return 0;
         }
-    }
-    catch (const Error& e) {
-
+    } catch (const Error& e) {
     }
 
     try {
         log.Notice("%s: Start services", __func__);
         // Start service threads here!
-    }
-    catch (const Error& e) {
-
+    } catch (const Error& e) {
     }
 
     try {
         // Wait for service threads to exit
         log.Notice("%s: Waiting on services", __func__);
 
-    }
-    catch (const Error& e) {
-
+    } catch (const Error& e) {
     }
     log.Notice("%s: Done", __func__);
     log.Close();

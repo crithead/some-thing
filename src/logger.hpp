@@ -4,12 +4,12 @@
 
 #include <string>
 
-namespace zebra {
+namespace zebra
+{
 
 class Logger
 {
-public:
-
+   public:
     enum Level {
         ERROR,
         WARNING,
@@ -42,12 +42,12 @@ public:
     void SetTrace(bool enable) noexcept;
     void SetFile(const std::string& fileName) noexcept;
 
-private:
+   private:
     Level level;
     bool trace;
     std::string fileName;
 };
 
-} // end namespace zebra
+}    // end namespace zebra
 
-#endif // ZEBRA_LOGGER_HPP
+#endif    // ZEBRA_LOGGER_HPP

@@ -9,18 +9,32 @@
 #include "exceptions.hpp"
 #include "logger.hpp"
 
-namespace zebra {
+namespace zebra
+{
 
 Logger::Level Logger::StringToLevel(const std::string& str)
 {
-    struct LevelName { const char *name; Logger::Level value; };
+    struct LevelName {
+        const char *name;
+        Logger::Level value;
+    };
     static const std::vector<LevelName> LEVEL_NAME_TABLE = {
-        { "ERROR", Logger::Level::ERROR, },
-        { "WARNING", Logger::Level::WARNING, },
-        { "NOTICE", Logger::Level::NOTICE, },
-        { "INFO", Logger::Level::INFO, },
-        { "DEBUG", Logger::Level::DEBUG, },
-        { nullptr, Logger::Level::ERROR }
+            {
+             "ERROR", Logger::Level::ERROR,
+             },
+            {
+             "WARNING", Logger::Level::WARNING,
+             },
+            {
+             "NOTICE", Logger::Level::NOTICE,
+             },
+            {
+             "INFO", Logger::Level::INFO,
+             },
+            {
+             "DEBUG", Logger::Level::DEBUG,
+             },
+            {nullptr, Logger::Level::ERROR}
     };
 
     for (auto& i : LEVEL_NAME_TABLE) {
@@ -32,19 +46,24 @@ Logger::Level Logger::StringToLevel(const std::string& str)
     throw ConversionError();
 }
 
-Logger::Logger() noexcept : level(Level::NOTICE), trace(false),
-        fileName("thing.log")
-{}
+Logger::Logger() noexcept
+        : level(Level::NOTICE), trace(false), fileName("thing.log")
+{
+}
 
-Logger::Logger(Level lvl) noexcept : level(lvl), trace(false),
-        fileName("thing.log")
-{}
+Logger::Logger(Level lvl) noexcept
+        : level(lvl), trace(false), fileName("thing.log")
+{
+}
 
-Logger::Logger(Level lvl, bool trc) noexcept : level(lvl), trace(trc),
-        fileName("thing.log")
-{}
+Logger::Logger(Level lvl, bool trc) noexcept
+        : level(lvl), trace(trc), fileName("thing.log")
+{
+}
 
-Logger::~Logger() noexcept {}
+Logger::~Logger() noexcept
+{
+}
 
 void Logger::Close() noexcept
 {
@@ -135,16 +154,11 @@ const std::string& Logger::GetFile() noexcept
 
 void Logger::SetLevel(Logger::Level lvl) noexcept
 {
-    if (lvl >= Logger::Level::ERROR && lvl <= Logger::Level::DEBUG)
-    {
+    if (lvl >= Logger::Level::ERROR && lvl <= Logger::Level::DEBUG) {
         this->level = lvl;
-    }
-    else if (lvl < Logger::Level::ERROR)
-    {
+    } else if (lvl < Logger::Level::ERROR) {
         this->level = Logger::Level::ERROR;
-    }
-    else if (lvl > Logger::Level::DEBUG)
-    {
+    } else if (lvl > Logger::Level::DEBUG) {
         this->level = Logger::Level::DEBUG;
     }
 }
@@ -159,4 +173,4 @@ void Logger::SetFile(const std::string& newFileName) noexcept
     this->fileName = newFileName;
 }
 
-} // end namespace zebra
+}    // end namespace zebra

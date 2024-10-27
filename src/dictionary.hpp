@@ -9,12 +9,13 @@
 
 using String = std::string;
 
-namespace zebra {
+namespace zebra
+{
 
 /// A string-string dictionary
 class Dictionary
 {
-public:
+   public:
     /// Default constructor.
     Dictionary();
     /// Copy constructor.
@@ -58,10 +59,10 @@ public:
     /// @return The number of keys in the dictionary.
     size_t Size() const noexcept;
 
-private:
+   private:
     std::unordered_map<String, String> data;
 };
 
-} // end namespace zebra
+}    // end namespace zebra
 
-#endif // ZEBRA_DICTIONARY_HPP
+#endif    // ZEBRA_DICTIONARY_HPP

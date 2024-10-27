@@ -4,20 +4,29 @@
 
 #include <exception>
 
-namespace zebra {
+namespace zebra
+{
 
 /// General program error.
-class Error : public std::exception {};
+class Error : public std::exception
+{
+};
 
 /// File not found.
-class FileNotFound : public Error {};
+class FileNotFound : public Error
+{
+};
 
 /// Key not found.
-class KeyNotFound : public Error {};
+class KeyNotFound : public Error
+{
+};
 
 ///
-class ConversionError : public Error {};
+class ConversionError : public Error
+{
+};
 
-} // end namespace zebra
+}    // end namespace zebra
 
-#endif // ZEBRA_EXCEPTION_HPP
+#endif    // ZEBRA_EXCEPTION_HPP

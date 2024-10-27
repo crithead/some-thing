@@ -54,7 +54,7 @@ tester: obj/test-main.o $(filter-out $(OBJ_DIR)/main.o,$(OBJECTS))
 
 .PHONY: format
 format:
-	clang-format -i --style=file $(SRC_DIR)/*.hpp $(SRC_DIR)/*.cpp
+	$(E)clang-format -i --style=file $(SRC_DIR)/*.hpp $(SRC_DIR)/*.cpp
 
 obj/helpers.o : $(SRC_DIR)/helpers.hpp $(SRC_DIR)/helpers.cpp
 obj/dictionary.o : $(SRC_DIR)/dictionary.hpp $(SRC_DIR)/dictionary.cpp

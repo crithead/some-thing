@@ -2,7 +2,8 @@
 #ifndef ZEBRA_HELPERS_HPP
 #define ZEBRA_HELPERS_HPP
 
-namespace zebra {
+namespace zebra
+{
 
 class Dictionary;
 class Logger;
@@ -11,7 +12,7 @@ class Logger;
 /// @param[in] argc Argument count
 /// @param[in] argv Argument vector
 /// @param[out] dict A reference to a Dictionary
-void GetOptions(int argc, const char * const *argv, Dictionary& dict);
+void GetOptions(int argc, const char *const *argv, Dictionary& dict);
 
 /// @brief Print usage information.
 void PrintUsage(void);
@@ -32,6 +33,6 @@ void ReadParametersFile(Dictionary& dict);
 /// @param[in] parameters The parameters to use.
 void InitLogger(Logger& logger, const Dictionary& parameters);
 
-} // end namespace zebra
+}    // end namespace zebra
 
-#endif // ZEBRA_HELPERS_HPP
+#endif    // ZEBRA_HELPERS_HPP

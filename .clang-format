@@ -22,7 +22,7 @@ AllowShortLambdasOnASingleLine: All
 AllowShortIfStatementsOnASingleLine: Never
 AllowShortLoopsOnASingleLine: false
 AlwaysBreakAfterDefinitionReturnType: None
-#AlwaysBreakAfterReturnType: None
+AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: false
 AlwaysBreakTemplateDeclarations: MultiLine
 BinPackArguments: true
@@ -30,7 +30,7 @@ BinPackParameters: true
 BraceWrapping:
   AfterCaseLabel: false
   AfterClass: true
-  AfterControlStatement: Multiline
+  AfterControlStatement: MultiLine
   AfterEnum: true
   AfterFunction: true
   AfterNamespace: false
@@ -44,7 +44,7 @@ BraceWrapping:
   SplitEmptyRecord: false
   SplitEmptyNamespace: true
 BreakAdjacentStringLiterals: false
-BreakAfterReturnType: Automatic
+#BreakAfterReturnType: Automatic
 BreakBeforeBinaryOperators: None
 BreakBeforeBraces: Linux
 BreakBeforeInheritanceComma: false
@@ -94,7 +94,7 @@ MacroBlockBegin: ''
 MacroBlockEnd: ''
 MaxEmptyLinesToKeep: 1
 NamespaceIndentation: None
-PackConstructorInitializers: BInPack
+PackConstructorInitializers: BinPack
 PenaltyBreakAssignment: 2
 PenaltyBreakBeforeFirstCallParameter: 19
 PenaltyBreakComment: 300
