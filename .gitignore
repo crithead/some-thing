@@ -1,0 +1,7 @@
+*.o
+*.swp
+*~
+obj/*
+.vscode/
+thing
+tester
